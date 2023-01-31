@@ -35,7 +35,7 @@ namespace NineGagApiClient
 
         #region Api Methods
 
-        public virtual async Task<IList<Post>> GetPostsAsync(PostCategory postCategory, int count, string olderThanPostId = "")
+        public virtual async Task<IList<Post>> GetPostsAsync(PostCategory postCategory, int count,  string olderThanPostId = "")
         {
             var args = new Dictionary<string, string>()
             {
@@ -45,7 +45,7 @@ namespace NineGagApiClient
                 { "entryTypes", "animated,photo,video" },
                 { "offset", "10" }
             };
-
+            
             if (!string.IsNullOrEmpty(olderThanPostId))
             {
                 args["olderThan"] = olderThanPostId;

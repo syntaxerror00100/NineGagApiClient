@@ -34,7 +34,7 @@ namespace IntegrationTest.My9GAG.NineGagApiClient
             var post6 = top10posts[5];
 
             //Act
-            var postsSince = await apiClient.GetPostsAsync(PostCategory.Hot, 10, post5.Id);
+            var postsSince = await apiClient.GetPostsAsync(PostCategory.Hot, 10,olderThanPostId: post5.Id);
 
             //Assert
             Assert.IsNotNull(postsSince);
